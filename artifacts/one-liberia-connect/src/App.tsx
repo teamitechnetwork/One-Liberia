@@ -10,6 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
+import HomePage from '@/pages/home';
 
 const queryClient = new QueryClient();
 const asset = (name: string) => `/images/${name}`;
@@ -130,23 +131,10 @@ function SectionTitle({ eyebrow, title, copy }: { eyebrow: string; title: string
 }
 
 function Home() {
-  return <SiteLayout>
+  return <>
     <SEO title="Home" description="Community-led broadband, planned school technology hubs, and local partnerships for a more connected Liberia."/>
-    <section className="hero"><div className="hero-inner">
-      <div className="reveal"><Eyebrow>Connectivity, shaped together</Eyebrow><h1>Where connection opens <em>possibility.</em></h1><p>Affordable internet can bring learning, livelihoods and essential services closer. We work with Liberian communities to understand where connectivity is needed next.</p><div className="hero-actions"><CTA href="/connect-your-community">Connect your community</CTA><CTA href="/about" outline>Meet One Liberia Connect</CTA></div><div style={{ marginTop: 24, color:'#d7e0e8', font:'10px "Space Mono"' }}>A DIVISION OF ONE LIBERIA ENTERPRISE CORPORATION</div></div>
-      <div className="hero-art reveal delay-1"><div className="orbit"><div className="orbit-core"><div><strong>One Liberia</strong><span>CONNECTED</span></div></div><div className="node one">COMMUNITY<br/>BROADBAND</div><div className="node two">LOCAL<br/>PARTNERS</div><div className="node three">SCHOOL<br/>HUBS</div><div className="node four">DIGITAL<br/>ACCESS</div></div><div className="hero-note">A shared direction<strong>Built with communities</strong></div></div>
-    </div></section>
-    <section className="section"><div className="container"><SectionTitle eyebrow="What connection makes possible" title="Start with what communities say they need." copy="Every place is different. Our approach begins with listening, then builds a practical path with the people and partners who know the community best."/>
-      <div className="pathways">
-        <article className="path-card feature"><span className="path-number">01 / ACCESS</span><h3>Community broadband</h3><p>Explore affordable internet access where connection can support everyday life, learning and local enterprise.</p><Link className="text-link" href="/services">Explore services <ArrowRight size={15}/></Link></article>
-        <article className="path-card"><span className="path-number">02 / LEARNING</span><h3>Planned school technology hubs</h3><p>Partner schools may become places to connect, learn and build practical digital skills.</p><Link className="text-link" href="/services">How hubs may work <ArrowRight size={15}/></Link></article>
-        <article className="path-card"><span className="path-number">03 / PARTNERSHIP</span><h3>Local relationships</h3><p>Community champions, schools, diaspora groups and delivery partners all have a role in shaping next steps.</p><Link className="text-link" href="/partners-investors">Find your role <ArrowRight size={15}/></Link></article>
-      </div>
-    </div></section>
-    <section className="mission-band"><div className="container mission-grid"><Image file="community-connectivity.jpg" alt="Community members gathered at a local connectivity point in Liberia"/><div className="mission-copy"><Eyebrow>Our mission</Eyebrow><h2>Location should not limit a person's access to opportunity.</h2><p>One Liberia Connect is working to bridge the connectivity gap with an approach rooted in local priorities. We listen to residents, schools and community organizations to understand demand and the conditions needed for sustainable service.</p><div className="pull-quote">In the Community, Built by the Diaspora.</div><div style={{ marginTop:25 }}><CTA href="/about">Learn about our approach</CTA></div></div></div></section>
-    <section className="section"><div className="container"><SectionTitle eyebrow="Grounded in place" title="A better-connected Liberia is built locally."/><div className="split-section"><div className="copy-block"><h3>Start with a conversation.</h3><p>Community requests help guide where we look next. A request is a starting point for a conversation—not a promise of immediate service. We consider community interest alongside coverage, suitable sites, power, local partnerships and the resources needed to establish and sustain service.</p><CTA href="/connect-your-community">Tell us where connection is needed</CTA></div><Image file="monrovia-community.jpg" alt="View across Monrovia showing homes, streets and community infrastructure"/></div></div></section>
-    <section className="callout"><div className="container callout-inner"><div><h2>Bring your community into the conversation.</h2><p>Share a location, introduce a school or local organization, or help gather neighbors around a shared need.</p></div><CTA href="/connect-your-community" outline>Start a community request</CTA></div></section>
-  </SiteLayout>;
+    <HomePage/>
+  </>;
 }
 
 function About() {
