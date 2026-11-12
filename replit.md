@@ -1,6 +1,6 @@
-# [Project name]
+# One Liberia Connect
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A public-facing website for One Liberia Connect, a division of One Liberia Enterprise Corporation, explaining community broadband, planned school technology hubs, partnerships, and the community request process.
 
 ## Run & Operate
 
@@ -22,23 +22,34 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Website: `artifacts/one-liberia-connect`
+- Website routes and page content: `artifacts/one-liberia-connect/src/App.tsx`
+- Website styles: `artifacts/one-liberia-connect/src/index.css`
+- Website images and logo: `artifacts/one-liberia-connect/public/images`
+- Vercel settings: root `vercel.json`
+- Website deploy notes: `README.md`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The public website is a static React + Vite app; it does not depend on the shared API server.
+- The Vercel project root must be the repository root so the pnpm workspace install and root `vercel.json` work.
+- Contact and community request forms are browser-only previews and do not deliver or store submissions.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Multi-page site for community broadband, planned school technology hubs, partnerships, and community requests.
+- Brand tagline: “In the Community, Built by the Diaspora.”
+- Campaign dates and reach targets must remain clearly labeled as plans or goals, not completed outcomes.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Keep the UI clean and polished, taking the CorelDRAW website as a visual reference without copying it.
+- Use the logo and photos supplied by the user.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Connect a secure submission service before collecting real inquiries; current forms do not transmit or store data.
+- The Vercel config is at the repository root and builds only the One Liberia Connect website.
 
 ## Pointers
 
