@@ -1,45 +1,38 @@
-# [Project name]
+# One Liberia Connect
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A public-facing website for One Liberia Connect, a division of One Liberia Enterprise Corporation, covering community broadband, planned school technology hubs, partnerships, and community requests.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- The `artifacts/one-liberia-connect: web` workflow runs the website preview.
+- `pnpm --filter @workspace/one-liberia-connect run typecheck` checks the website.
+- The website preview does not require environment variables or the API server.
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- pnpm workspace, React, TypeScript, and Vite
+- Static frontend; no API or database dependency for the public website
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Website routes and page content: `artifacts/one-liberia-connect/src`
+- Website styles: `artifacts/one-liberia-connect/src/index.css` and `src/pages/home.css`
+- Website photos and logo: `artifacts/one-liberia-connect/public/images`
+- Shared API server and libraries: `artifacts/api-server` and `lib`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
-
-## Product
-
-_Describe the high-level user-facing capabilities of this app once they exist._
+- The public website is a static React + Vite app and does not depend on the shared API server.
+- Community, contact, and partnership forms currently validate in the browser only; they do not transmit or store submissions.
+- Campaign dates and reach targets must remain clearly labeled as plans or goals, not completed outcomes.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Keep the UI clean and polished, taking the CorelDRAW website as a visual reference without copying it.
+- Use the logo and photos supplied by the user.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Connect a secure submission service before collecting real inquiries.
+- The original website repository is `https://github.com/teamitechnetwork/One-Liberia`.
 
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
