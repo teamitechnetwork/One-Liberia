@@ -1,0 +1,17 @@
+{
+  "framework": null,
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @workspace/one-liberia-connect run build",
+  "outputDirectory": "artifacts/one-liberia-connect/dist/public",
+  "rewrites": [
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/services", "destination": "/index.html" },
+    { "source": "/cause", "destination": "/index.html" },
+    { "source": "/partners-investors", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    {
+      "source": "/connect-your-community",
+      "destination": "/index.html"
+    }
+  ]
+}
