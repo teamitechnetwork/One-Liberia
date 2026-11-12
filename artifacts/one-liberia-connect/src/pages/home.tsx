@@ -15,6 +15,7 @@ import {
   X,
 } from 'lucide-react';
 import './home.css';
+import './home-refresh.css';
 
 const asset = (name: string) => `/images/${name}`;
 const routes = [
@@ -456,8 +457,9 @@ export default function HomePage() {
           <div className="olp-hero-visual">
             <div className="olp-hero-photo">
               <img
-                src={asset('community-connectivity.jpg')}
-                alt="Community members gathered around mobile devices in Liberia"
+                src={asset('get-started-background.avif')}
+                alt=""
+                aria-hidden="true"
                 fetchPriority="high"
               />
               <div className="olp-photo-caption">
@@ -501,6 +503,9 @@ export default function HomePage() {
             />
             <div className="olp-program-grid">
               <article className="olp-program olp-program-feature">
+                <div className="olp-program-photo">
+                  <img src={asset('ganta-installation.jpg')} alt="A network technician working in Ganta, Nimba County" loading="lazy" />
+                </div>
                 <span className="olp-program-number">01 <i>/ ACCESS</i></span>
                 <div className="olp-program-icon"><Radio size={21} aria-hidden="true" /></div>
                 <h3>Community broadband</h3>
@@ -508,6 +513,9 @@ export default function HomePage() {
                 <Link href="/services" className="olp-inline-link" data-testid="link-service-broadband">Explore services <ArrowRight size={15} /></Link>
               </article>
               <article className="olp-program">
+                <div className="olp-program-photo">
+                  <img src={asset('learning-together.jpg')} alt="Students learning together" loading="lazy" />
+                </div>
                 <span className="olp-program-number">02 <i>/ LEARNING</i></span>
                 <div className="olp-program-icon"><School size={21} aria-hidden="true" /></div>
                 <h3>Planned school hubs</h3>
@@ -515,6 +523,9 @@ export default function HomePage() {
                 <Link href="/services" className="olp-inline-link" data-testid="link-service-hubs">How hubs may work <ArrowRight size={15} /></Link>
               </article>
               <article className="olp-program">
+                <div className="olp-program-photo">
+                  <img src={asset('diaspora-community-meeting.jpg')} alt="Community members and diaspora partners in conversation" loading="lazy" />
+                </div>
                 <span className="olp-program-number">03 <i>/ PARTNERSHIP</i></span>
                 <div className="olp-program-icon"><Users size={21} aria-hidden="true" /></div>
                 <h3>Local relationships</h3>
@@ -525,9 +536,45 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="olp-highlights olp-section" id="community-connections" aria-label="Community connection examples">
+          <div className="olp-container">
+            <SectionHeading
+              eyebrow="Community examples"
+              title="Connections, shared in local places."
+              copy="These campaign cards are shown as supplied. They do not announce a new launch or confirm current service availability."
+            />
+            <div className="olp-highlights-grid">
+              <figure className="olp-highlight">
+                <img
+                  src={asset('ganta-connected-update.jpg')}
+                  alt="One Liberia campaign card featuring Ganta"
+                  loading="eager"
+                />
+                <figcaption><span>Community example</span><strong>Ganta</strong></figcaption>
+              </figure>
+              <figure className="olp-highlight">
+                <img
+                  src={asset('justina-bar-connected.jpg')}
+                  alt="One Liberia campaign card featuring Justina Bar"
+                  loading="eager"
+                />
+                <figcaption><span>Community example</span><strong>Justina Bar</strong></figcaption>
+              </figure>
+              <figure className="olp-highlight">
+                <img
+                  src={asset('f2-entertainment-connected.jpg')}
+                  alt="One Liberia campaign card featuring F2 Entertainment"
+                  loading="eager"
+                />
+                <figcaption><span>Community example</span><strong>F2 Entertainment</strong></figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
         <section className="olp-community">
           <div className="olp-community-photo">
-            <img src={asset('monrovia-community.jpg')} alt="A view across Monrovia, with homes, roads, and community infrastructure" loading="lazy" />
+            <img src={asset('community-outreach-booth-a.jpg')} alt="One Liberia Connect community outreach table beside a map of Liberia" loading="eager" />
             <div className="olp-image-marker"><MapPin size={15} aria-hidden="true" /> LIBERIA</div>
           </div>
           <div className="olp-community-copy">
